@@ -1,0 +1,15 @@
+services:
+  Identity-database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: idt_db
+      MYSQL_USER: idt_user_admin
+      MYSQL_PASSWORD: idt_psw_local
+    volumes:
+      - idtMySql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  idtMySql-data:
